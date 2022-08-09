@@ -9,11 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProductSeviceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
 
-    public ProductSeviceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository) {
+        super();
         this.productRepository = productRepository;
     }
 
