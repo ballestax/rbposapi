@@ -19,16 +19,16 @@ public class Product {
     @Column(name = "code", nullable = false, unique = true)
     private String code;
 
-    @Column(name = "description", length = 512)
+    @Column(name = "description")
     private String description;
 
-    @Column(name = "price", precision = 8)
+    @Column(name = "price")
     private double price;
 
-    @Column(name = "variable", columnDefinition = "0")
+    @Column(name = "variable")
     private boolean variable;
 
-    @Column(name = "enabled", columnDefinition = "1")
+    @Column(name = "enabled")
     private boolean enabled;
 
 
