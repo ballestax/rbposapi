@@ -3,6 +3,8 @@ package com.bacon57.baconapi.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -31,7 +33,10 @@ public class Product {
     @Column(name = "enabled")
     private boolean enabled;
 
+    @OneToMany(mappedBy = "product")
+    private List<Presentation> presentations;
 
-
+    @OneToMany(mappedBy = "product")
+    private Set<ProductIngredient> productIngredients;
 
 }
