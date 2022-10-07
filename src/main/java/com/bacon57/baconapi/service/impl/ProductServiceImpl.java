@@ -1,14 +1,13 @@
 package com.bacon57.baconapi.service.impl;
 
+
 import com.bacon57.baconapi.dto.ProductDto;
 import com.bacon57.baconapi.exception.ResourceNotFoundException;
 import com.bacon57.baconapi.mapper.ProductMapper;
-import com.bacon57.baconapi.model.Ingredient;
 import com.bacon57.baconapi.model.Product;
 import com.bacon57.baconapi.model.ProductIngredient;
 import com.bacon57.baconapi.repository.ProductRepository;
 import com.bacon57.baconapi.service.ProductService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +16,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public
+class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
     @Autowired
-    private ProductMapper productMapper;
+    private ProductMapper mapper;
 
     public ProductServiceImpl(ProductRepository productRepository) {
         super();
@@ -35,9 +35,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getAllProducts() {
-
-        return productRepository.findAll().stream().map(
-                product -> productMapper.toDTO(product)).collect(Collectors.toList());
+        return productRepository.findAll()
+                .stream()
+                .map(product -> mapper.entityToDto(product))
+                .collect(Collectors.toList());
     }
 
     @Override
