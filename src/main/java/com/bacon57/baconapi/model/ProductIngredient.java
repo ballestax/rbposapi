@@ -1,7 +1,16 @@
 package com.bacon57.baconapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 
+@Data
+@EqualsAndHashCode
 @Entity
 public class ProductIngredient {
 
@@ -20,10 +29,6 @@ public class ProductIngredient {
 
     int cantidad;
     boolean optional;
-
-
-
-
 
 
 }

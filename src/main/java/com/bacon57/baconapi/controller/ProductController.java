@@ -1,12 +1,15 @@
 package com.bacon57.baconapi.controller;
 
+import com.bacon57.baconapi.dto.ProductDto;
 import com.bacon57.baconapi.model.Product;
+import com.bacon57.baconapi.model.ProductIngredient;
 import com.bacon57.baconapi.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/products")
@@ -24,7 +27,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getAllProducts(){
+    public List<ProductDto> getAllProducts(){
         return productService.getAllProducts();
     }
 

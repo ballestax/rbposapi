@@ -1,17 +1,27 @@
 package com.bacon57.baconapi.service.impl;
 
+import com.bacon57.baconapi.dto.ProductDto;
 import com.bacon57.baconapi.exception.ResourceNotFoundException;
+import com.bacon57.baconapi.mapper.ProductMapper;
+import com.bacon57.baconapi.model.Ingredient;
 import com.bacon57.baconapi.model.Product;
+import com.bacon57.baconapi.model.ProductIngredient;
 import com.bacon57.baconapi.repository.ProductRepository;
 import com.bacon57.baconapi.service.ProductService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
+    @Autowired
+    private ProductMapper productMapper;
 
     public ProductServiceImpl(ProductRepository productRepository) {
         super();
@@ -24,8 +34,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public List<ProductDto> getAllProducts() {
+
+        return productRepository.findAll().stream().map(
+                product -> productMapper.toDTO(product)).collect(Collectors.toList());
     }
 
     @Override
@@ -54,5 +66,14 @@ public class ProductServiceImpl implements ProductService {
         productRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("Product", "Id", id));
         productRepository.deleteById(id);
+    }
+
+
+    public Set<ProductIngredient> getProductIngredientsById(long id) {
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Product", "id", id)
+        );
+
+        return product.getProductIngredients();
     }
 }

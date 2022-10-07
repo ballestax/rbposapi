@@ -1,8 +1,10 @@
 package com.bacon57.baconapi.model;
 
+import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
 
@@ -25,7 +27,7 @@ public class Product {
     private String description;
 
     @Column(name = "price")
-    private double price;
+    private BigDecimal price;
 
     @Column(name = "variable")
     private boolean variable;
@@ -34,9 +36,17 @@ public class Product {
     private boolean enabled;
 
     @OneToMany(mappedBy = "product")
+    @JsonManagedReference
     private List<Presentation> presentations;
 
+
     @OneToMany(mappedBy = "product")
+    @JsonIgnore
     private Set<ProductIngredient> productIngredients;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    @JsonBackReference
+    private Category category;
 
 }

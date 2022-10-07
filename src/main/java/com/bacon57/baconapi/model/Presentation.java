@@ -1,5 +1,7 @@
 package com.bacon57.baconapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,13 +24,14 @@ public class Presentation {
     @Column(name = "price")
     private double price;
 
-    @Column(name = "default")
+    @Column(name = "isdefault")
     private boolean _default;
 
-    @Column(name = "enabled")
+    @Column(name = "isenabled")
     private boolean _enabled;
 
     @ManyToOne
     @JoinColumn(name ="product_id")
+    @JsonBackReference
     private Product product;
 }
