@@ -1,20 +1,28 @@
 package com.bacon57.baconapi.service.impl;
 
+import com.bacon57.baconapi.dto.CategoryDto;
 import com.bacon57.baconapi.exception.ResourceNotFoundException;
+import com.bacon57.baconapi.mapper.CategoryMapper;
+import com.bacon57.baconapi.mapper.ProductMapper;
 import com.bacon57.baconapi.model.Category;
 import com.bacon57.baconapi.model.Product;
 import com.bacon57.baconapi.repository.CategoryRepository;
 import com.bacon57.baconapi.repository.ProductRepository;
 import com.bacon57.baconapi.service.CategoryService;
 import com.bacon57.baconapi.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private CategoryMapper mapper;
 
     public CategoryServiceImpl(CategoryRepository categoryRepository) {
         super();
@@ -27,8 +35,12 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Category> getAllCategories() {
-        return categoryRepository.findAll();
+    public List<CategoryDto> getAllCategories() {
+
+        return categoryRepository.findAll()
+                .stream()
+                .map(category -> mapper.entityToDto(category))
+                .collect(Collectors.toList());
     }
 
     @Override

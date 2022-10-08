@@ -1,5 +1,6 @@
 package com.bacon57.baconapi.controller;
 
+import com.bacon57.baconapi.dto.CategoryDto;
 import com.bacon57.baconapi.model.Category;
 import com.bacon57.baconapi.service.CategoryService;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<Category> getAllCategories(){
+    public List<CategoryDto> getAllCategories(){
         return categoryService.getAllCategories();
     }
 
