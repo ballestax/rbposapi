@@ -1,6 +1,7 @@
 package com.bacon57.baconapi.service;
 
 import com.bacon57.baconapi.dto.ProductDto;
+import com.bacon57.baconapi.dto.ProductFullDto;
 import com.bacon57.baconapi.model.Product;
 import com.bacon57.baconapi.model.ProductIngredient;
 
@@ -13,7 +14,7 @@ public interface ProductService {
 
     List<ProductDto> getAllProducts();
 
-    Product getProductById(long id);
+    ProductFullDto getProductById(long id);
 
     Product updateProduct(Product product, long id);
 

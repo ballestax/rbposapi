@@ -1,6 +1,7 @@
 package com.bacon57.baconapi.controller;
 
 import com.bacon57.baconapi.dto.ProductDto;
+import com.bacon57.baconapi.dto.ProductFullDto;
 import com.bacon57.baconapi.model.Product;
 import com.bacon57.baconapi.service.ProductService;
 import org.springframework.http.HttpStatus;
@@ -30,8 +31,8 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable("id") long productId){
-        return new ResponseEntity<Product>(productService.getProductById(productId), HttpStatus.OK);
+    public ResponseEntity<ProductFullDto> getProductById(@PathVariable("id") long productId){
+        return new ResponseEntity<ProductFullDto>(productService.getProductById(productId), HttpStatus.OK);
     }
 
     @PutMapping("{id}")

@@ -27,7 +27,7 @@ public class ProductIngredient {
     @JoinColumn(name = "ingredient_id")
     Ingredient ingredient;
 
-    int cantidad;
+    int quantity;
     boolean optional;
 
 

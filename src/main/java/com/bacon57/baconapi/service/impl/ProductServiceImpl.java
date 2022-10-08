@@ -2,6 +2,7 @@ package com.bacon57.baconapi.service.impl;
 
 
 import com.bacon57.baconapi.dto.ProductDto;
+import com.bacon57.baconapi.dto.ProductFullDto;
 import com.bacon57.baconapi.exception.ResourceNotFoundException;
 import com.bacon57.baconapi.mapper.ProductMapper;
 import com.bacon57.baconapi.model.Product;
@@ -42,8 +43,8 @@ class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(long id) {
-        return productRepository.findById(id).orElseThrow(()->
+    public ProductFullDto getProductById(long id) {
+        return productRepository.findById(id).map(product -> mapper.productToProductFullDto(product)).orElseThrow(()->
                 new ResourceNotFoundException("Product", "id", id));
     }
 
