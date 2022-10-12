@@ -3,7 +3,6 @@ package com.bacon57.baconapi.service;
 import com.bacon57.baconapi.dto.ProductDto;
 import com.bacon57.baconapi.dto.ProductFullDto;
 import com.bacon57.baconapi.model.Product;
-import com.bacon57.baconapi.model.ProductIngredient;
 
 import java.util.List;
 import java.util.Set;
@@ -20,5 +19,4 @@ public interface ProductService {
 
     void delete(long id);
 
-    Set<ProductIngredient> getProductIngredientsById(long id);
 }

@@ -1,15 +1,16 @@
 package com.bacon57.baconapi.model;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "ingredients")
-public class Ingredient {
+@Table(name = "additionals")
+public class Additional {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +19,10 @@ public class Ingredient {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @JsonBackReference
-    @ManyToMany(mappedBy = "ingredients", fetch = FetchType.LAZY)
-    private Set<Product> products;
+    @Column(name = "price", nullable = false)
+    private BigDecimal price;
 
+    @JsonBackReference
+    @ManyToMany(mappedBy = "additionals", fetch = FetchType.LAZY)
+    private Set<Product> products;
 }

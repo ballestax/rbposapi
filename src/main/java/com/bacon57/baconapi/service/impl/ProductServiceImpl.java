@@ -6,7 +6,6 @@ import com.bacon57.baconapi.dto.ProductFullDto;
 import com.bacon57.baconapi.exception.ResourceNotFoundException;
 import com.bacon57.baconapi.mapper.ProductMapper;
 import com.bacon57.baconapi.model.Product;
-import com.bacon57.baconapi.model.ProductIngredient;
 import com.bacon57.baconapi.repository.ProductRepository;
 import com.bacon57.baconapi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public
-class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
     @Autowired
@@ -70,12 +68,4 @@ class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
-
-    public Set<ProductIngredient> getProductIngredientsById(long id) {
-        Product product = productRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Product", "id", id)
-        );
-
-        return product.getProductIngredients();
-    }
 }
