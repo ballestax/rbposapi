@@ -11,6 +11,7 @@ import com.bacon57.baconapi.repository.ProductRepository;
 import com.bacon57.baconapi.service.CategoryService;
 import com.bacon57.baconapi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryDto> getAllCategories() {
 
-        return categoryRepository.findAll()
+        return categoryRepository.findAll(Sort.by(Sort.Direction.DESC, "zOrder"))
                 .stream()
                 .map(category -> mapper.entityToDto(category))
                 .collect(Collectors.toList());

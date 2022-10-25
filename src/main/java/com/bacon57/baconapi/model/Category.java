@@ -18,6 +18,9 @@ public class Category {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
+    @Column(name = "z_order")
+    private int zOrder;
+
     @OneToMany(mappedBy = "category")
     @JsonManagedReference
     private List<Product> products;
