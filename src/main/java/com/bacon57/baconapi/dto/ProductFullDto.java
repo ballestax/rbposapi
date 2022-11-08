@@ -14,6 +14,7 @@ public class ProductFullDto {
 
     private String name;
     private String category;
+    private String image;
     private BigDecimal price;
     private boolean variable;
     private List<Presentation> presentations;
