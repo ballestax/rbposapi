@@ -29,8 +29,12 @@ jobs:
     - name: Stop running application
       run: if sudo lsof -i :80; then sudo lsof -i :80 | awk 'NR!=1 {print $2}' | xargs sudo kill -9; else echo "No se esta ejecutando ninguna aplicacion en el puerto 80"; fi
 
-    - name: Clean project
-      run: mvn clean package
+    - name: Cache the Maven packages to speed up build
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
