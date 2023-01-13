@@ -27,7 +27,8 @@ jobs:
         cache: maven
 
     - name: Stop running application
-      run: sudo kill -9 $(sudo lsof -t -i :80)
+      run: if lsof -i :80; then lsof -i :80 | awk 'NR!=1 {print $2}' | xargs kill -9; else echo "No se esta ejecutando ninguna aplicacion en el puerto 80"; fi
+
 
     - name: Clean project
       run: mvn clean package
