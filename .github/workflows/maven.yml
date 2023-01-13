@@ -36,7 +36,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Copy application file
-      run: cp target/baconapi-0.0.1-SNAPSHOT.jar /home/ubuntu/baconapi2/baconapi-0.0.1-SNAPSHOT.jar
+      run: cp target/baconapi-0.0.1-SNAPSHOT.jar /home/ubuntu/baconapi/baconapi-0.0.1-SNAPSHOT.jar
 
     - name: Execute Jar file
       run: sudo nohup java -jar /home/ubuntu/baconapi2/baconapi-0.0.1-SNAPSHOT.jar &
