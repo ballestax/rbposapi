@@ -42,5 +42,5 @@ jobs:
       run: sudo nohup java -jar /home/ubuntu/baconapi2/baconapi-0.0.1-SNAPSHOT.jar &
 
     - name: verificar si el servicio esta activo
-      run: netstat -tulnp | grep :80
+      run: lsof -i :80
 
