@@ -11,4 +11,5 @@ public class PresentationDto {
     private BigDecimal price;
     private boolean _default;
     private boolean _enabled;
+    private Long product_id;
 }

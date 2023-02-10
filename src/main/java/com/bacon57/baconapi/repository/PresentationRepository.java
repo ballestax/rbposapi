@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface PresentationRepository extends JpaRepository<Presentation, Long> {
 
-    @Query(value = "SELECT i.id as id, i.name as name FROM presentation p, product_presentation pp WHERE pp.product_id=:productId GROUP BY i.id", nativeQuery = true)
+    @Query(value = "SELECT * FROM presentations p WHERE p.product_id=:productId", nativeQuery = true)
     List<Presentation> findPresentationsByProductId(@Param("productId") Long productId);
 
 }

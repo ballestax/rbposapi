@@ -35,8 +35,8 @@ public class PresentationController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Presentation> getPresentationById(@PathVariable("id") long presentationId) {
-        return new ResponseEntity<Presentation>(presentationService.getPresentationById(presentationId), HttpStatus.OK);
+    public ResponseEntity<PresentationDto> getPresentationById(@PathVariable("id") long presentationId) {
+        return new ResponseEntity<PresentationDto>(presentationService.getPresentationById(presentationId), HttpStatus.OK);
     }
 
     @PutMapping("{id}")

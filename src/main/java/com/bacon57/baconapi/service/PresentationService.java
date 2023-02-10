@@ -13,9 +13,9 @@ public interface PresentationService {
 
     List<Presentation> getAllPresentationsByProductId(Long productId);
 
-    Presentation getPresentationById(long id);
+    PresentationDto getPresentationById(long id);
 
-    Presentation updatePresentation(Presentation product, long id);
+    Presentation updatePresentation(Presentation presentation, long id);
 
     void delete(long id);
 

@@ -4,9 +4,11 @@ import com.bacon57.baconapi.dto.ProductDto;
 import com.bacon57.baconapi.dto.ProductFullDto;
 import com.bacon57.baconapi.model.Additional;
 import com.bacon57.baconapi.model.Ingredient;
+import com.bacon57.baconapi.model.Presentation;
 import com.bacon57.baconapi.model.Product;
 import com.bacon57.baconapi.service.AdditionalService;
 import com.bacon57.baconapi.service.IngredientService;
+import com.bacon57.baconapi.service.PresentationService;
 import com.bacon57.baconapi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +28,9 @@ public class ProductController {
 
     @Autowired
     private AdditionalService additionalService;
+
+    @Autowired
+    private PresentationService presentationService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -65,12 +70,20 @@ public class ProductController {
         return ingredientService.getAllIngredientsByProductId(id);
     }
 
-    @GetMapping("{id}/additionals")
-    public List<Additional> getAdditionalsByProductId(@PathVariable("id") long id) {
+    @GetMapping("{id}/additions")
+    public List<Additional> getAdditionsByProductId(@PathVariable("id") long id) {
         if (additionalService == null) {
             return Collections.emptyList();
         }
         return additionalService.getAllAdditionalsByProductId(id);
+    }
+
+    @GetMapping("{id}/presentations")
+    public List<Presentation> getPresentationsByProductId(@PathVariable("id") long id) {
+        if (presentationService == null) {
+            return Collections.emptyList();
+        }
+        return presentationService.getAllPresentationsByProductId(id);
     }
 
 }
