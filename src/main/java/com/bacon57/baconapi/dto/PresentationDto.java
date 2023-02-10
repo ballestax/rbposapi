@@ -9,5 +9,6 @@ public class PresentationDto {
 
     private String name;
     private BigDecimal price;
-    private boolean _deafult;
+    private boolean _default;
+    private boolean _enabled;
 }
