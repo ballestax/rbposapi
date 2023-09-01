@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class BaconapiApplication {
+public class RbposapiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BaconapiApplication.class, args);
+		SpringApplication.run(RbposapiApplication.class, args);
 	}
 
 }
