@@ -8,11 +8,11 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bacon57</groupId>
-	<artifactId>baconapi</artifactId>
+	<groupId>com.ballestax</groupId>
+	<artifactId>rbposapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>baconapi</name>
-	<description>Demo project for Spring Boot</description>
+	<name>rbposapi</name>
+	<description>RB POS API</description>
 	<properties>
 		<java.version>17</java.version>
 		<org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
@@ -26,13 +26,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-                <dependency>
+                <!--dependency>
                     <groupId>org.mariadb.jdbc</groupId>
                     <artifactId>mariadb-java-client</artifactId>
                     <scope>runtime</scope>
-                </dependency>
-
+                </dependency-->
+				<dependency>
+					<groupId>org.postgresql</groupId>
+					<artifactId>postgresql</artifactId>
+					<scope>runtime</scope>
+				</dependency>
+				<!--dependency>
+    				<groupId>com.h2database</groupId>
+    				<artifactId>h2</artifactId>
+    				<scope>runtime</scope>
+				</dependency-->
                 <dependency>
                     <groupId>org.projectlombok</groupId>
                     <artifactId>lombok</artifactId>
@@ -53,7 +61,6 @@
                     <version>1.5.3.Final</version>
                 </dependency>
             </dependencies>
-
 
             <build>
                 <plugins>
