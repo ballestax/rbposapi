@@ -62,6 +62,14 @@ public class ProductController {
         return new ResponseEntity<>("Product deleted successfully!", HttpStatus.OK);
     }
 
+    @GetMapping("{id}/ingredients/{idIng}")
+    public boolean addIngredientsToProduct(@PathVariable("id") long idProduct, @PathVariable("idIng") long idIngredient) {
+        if (ingredientService == null) {
+            return false;
+        }
+        return ingredientService.addIngredientToProduct(idProduct, idIngredient);
+    }
+
     @GetMapping("{id}/ingredients")
     public List<Ingredient> getIngredientsByProductId(@PathVariable("id") long id) {
         if (ingredientService == null) {
@@ -69,6 +77,7 @@ public class ProductController {
         }
         return ingredientService.getAllIngredientsByProductId(id);
     }
+
 
     @GetMapping("{id}/additions")
     public List<Additional> getAdditionsByProductId(@PathVariable("id") long id) {

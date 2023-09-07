@@ -9,11 +9,13 @@ public interface IngredientService {
 
     Ingredient saveIngredient(Ingredient product);
 
-    List<Ingredient> getAllIngredients();
+    List<IngredientDto> getAllIngredients();
 
     List<Ingredient> getAllIngredientsByProductId(Long productId);
 
     Ingredient getIngredientById(long id);
+
+    boolean addIngredientToProduct(long idProduct, long idIngredient);
 
     Ingredient updateIngredient(Ingredient product, long id);
 

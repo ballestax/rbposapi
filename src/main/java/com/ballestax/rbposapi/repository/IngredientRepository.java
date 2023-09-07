@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface IngredientRepository extends JpaRepository<Ingredient,Long> {
 
-    @Query(value = "SELECT i.id as id, i.name as name FROM ingredients i, product_ingredient pi WHERE pi.product_id=:productId GROUP BY i.id", nativeQuery = true)
+    @Query(value = "SELECT A.id, A.name FROM product_ingredient B, ingredients A WHERE B.product_id=:productId AND A.id=B.ingredient_id", nativeQuery = true)
     List<Ingredient> findIngredientByProductId(@Param("productId") Long productId);
 
 }
