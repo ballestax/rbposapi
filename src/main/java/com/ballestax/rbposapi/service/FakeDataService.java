@@ -34,7 +34,7 @@ public class FakeDataService {
 
     public Ingredient generateFakeIngredient(){
         Ingredient ingredient = new Ingredient();
-        ingredient.setName(faker.food().ingredient());       
+        ingredient.setName(faker.food().spice());       
         return ingredient;
     }
 
