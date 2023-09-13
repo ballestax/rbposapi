@@ -5,7 +5,6 @@ import com.ballestax.rbposapi.dto.ProductFullDto;
 import com.ballestax.rbposapi.model.Product;
 
 import java.util.List;
-import java.util.Set;
 
 public interface ProductService {
 

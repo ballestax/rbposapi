@@ -1,15 +1,11 @@
 package com.ballestax.rbposapi.controller;
 
 import com.ballestax.rbposapi.dto.IngredientDto;
-import com.ballestax.rbposapi.dto.ProductDto;
-import com.ballestax.rbposapi.model.Category;
 import com.ballestax.rbposapi.model.Ingredient;
-import com.ballestax.rbposapi.service.CategoryService;
 import com.ballestax.rbposapi.service.IngredientService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,8 +26,8 @@ public class IngredientController {
     }
 
     @PostMapping()
-    public ResponseEntity<Ingredient> saveIngredient(@RequestBody Ingredient Ingredient){
-        return new ResponseEntity<Ingredient>(ingredientService.saveIngredient(Ingredient), HttpStatus.CREATED);
+    public ResponseEntity<Ingredient> saveIngredient(@RequestBody Ingredient ingredient){
+        return new ResponseEntity<>(ingredientService.saveIngredient(ingredient), HttpStatus.CREATED);
     }
 
     @GetMapping

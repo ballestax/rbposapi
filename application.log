@@ -1,115 +1,24 @@
-2023-09-08 11:17:47.787  INFO 12624 --- [main] c.b.rbposapi.RbposapiApplication         : Starting RbposapiApplication using Java 17.0.8 on AW0227 with PID 12624 (C:\Dev\rbposapi\target\classes started by comunicaciones in C:\Dev\rbposapi)
-2023-09-08 11:17:47.827  INFO 12624 --- [main] c.b.rbposapi.RbposapiApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-08 11:17:48.506  INFO 12624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-08 11:17:48.575  INFO 12624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 6 JPA repository interfaces.
-2023-09-08 11:17:49.293  INFO 12624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
-2023-09-08 11:17:49.303  INFO 12624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-08 11:17:49.304  INFO 12624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-09-08 11:17:49.528  INFO 12624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-08 11:17:49.529  INFO 12624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1579 ms
-2023-09-08 11:17:50.351  INFO 12624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-08 11:17:53.463  INFO 12624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-08 11:18:00.802  INFO 12624 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 11:18:01.109  WARN 12624 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-08 11:18:01.327  INFO 12624 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-09-08 11:18:01.491  INFO 12624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
-2023-09-08 11:18:01.502  INFO 12624 --- [main] c.b.rbposapi.RbposapiApplication         : Started RbposapiApplication in 14.353 seconds (JVM running for 14.791)
-2023-09-08 11:18:01.619  INFO 12624 --- [main] c.b.r.runner.DataPopulationRunner        : Starting faker runner...
-2023-09-08 11:18:01.619  INFO 12624 --- [main] c.b.r.runner.DataPopulationRunner        : Ended faker runner...
-2023-09-08 11:18:58.315  INFO 12624 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-08 11:18:58.315  INFO 12624 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-08 11:18:58.316  INFO 12624 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2023-09-08 11:19:03.805  WARN 12624 --- [http-nio-80-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@60dd942d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 11:30:33.427  WARN 12624 --- [http-nio-80-exec-5] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class com.ballestax.rbposapi.model.Presentation]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.Set<com.ballestax.rbposapi.model.Product>`) not compatible with managed type (com.ballestax.rbposapi.model.Product)
-2023-09-08 11:30:33.430  WARN 12624 --- [http-nio-80-exec-5] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class com.ballestax.rbposapi.model.Presentation]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.Set<com.ballestax.rbposapi.model.Product>`) not compatible with managed type (com.ballestax.rbposapi.model.Product)
-2023-09-08 11:30:33.431  WARN 12624 --- [http-nio-80-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
-2023-09-08 11:33:39.361  WARN 12624 --- [http-nio-80-exec-6] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class com.ballestax.rbposapi.model.Presentation]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.Set<com.ballestax.rbposapi.model.Product>`) not compatible with managed type (com.ballestax.rbposapi.model.Product)
-2023-09-08 11:33:39.363  WARN 12624 --- [http-nio-80-exec-6] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class com.ballestax.rbposapi.model.Presentation]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.Set<com.ballestax.rbposapi.model.Product>`) not compatible with managed type (com.ballestax.rbposapi.model.Product)
-2023-09-08 11:33:39.363  WARN 12624 --- [http-nio-80-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
-2023-09-08 11:40:51.550  WARN 12624 --- [http-nio-80-exec-8] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class com.ballestax.rbposapi.model.Presentation]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.Set<com.ballestax.rbposapi.model.Product>`) not compatible with managed type (com.ballestax.rbposapi.model.Product)
-2023-09-08 11:40:51.552  WARN 12624 --- [http-nio-80-exec-8] .c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class com.ballestax.rbposapi.model.Presentation]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back reference type (`java.util.Set<com.ballestax.rbposapi.model.Product>`) not compatible with managed type (com.ballestax.rbposapi.model.Product)
-2023-09-08 11:40:51.553  WARN 12624 --- [http-nio-80-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/json;charset=UTF-8' not supported]
-2023-09-08 11:49:25.052  WARN 12624 --- [http-nio-80-exec-10] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@29b328cc (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 11:50:09.764  WARN 12624 --- [http-nio-80-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@280c881b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 14:09:03.019  INFO 12624 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 14:09:03.035  INFO 12624 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-08 14:09:03.038  INFO 12624 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-08 14:38:48.829  INFO 10384 --- [main] c.b.rbposapi.RbposapiApplication         : Starting RbposapiApplication using Java 17.0.8 on AW0227 with PID 10384 (C:\Dev\rbposapi\target\classes started by comunicaciones in C:\Dev\rbposapi)
-2023-09-08 14:38:48.831  INFO 10384 --- [main] c.b.rbposapi.RbposapiApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-08 14:38:49.667  INFO 10384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-08 14:38:49.730  INFO 10384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 6 JPA repository interfaces.
-2023-09-08 14:38:50.254  INFO 10384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
-2023-09-08 14:38:50.279  INFO 10384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-08 14:38:50.280  INFO 10384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-09-08 14:38:53.253  INFO 10384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-08 14:38:53.254  INFO 10384 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4379 ms
-2023-09-08 14:38:53.981  INFO 10384 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-08 14:38:56.629  INFO 10384 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-08 14:39:03.589  INFO 10384 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 14:39:03.903  WARN 10384 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-08 14:39:04.105  INFO 10384 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-09-08 14:39:04.192  INFO 10384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
-2023-09-08 14:39:04.203  INFO 10384 --- [main] c.b.rbposapi.RbposapiApplication         : Started RbposapiApplication in 16.329 seconds (JVM running for 16.908)
-2023-09-08 14:39:04.255  INFO 10384 --- [main] c.b.r.runner.DataPopulationRunner        : Starting faker runner...
-2023-09-08 14:39:04.255  INFO 10384 --- [main] c.b.r.runner.DataPopulationRunner        : Ended faker runner...
-2023-09-08 14:39:14.239  INFO 10384 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-08 14:39:14.240  INFO 10384 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-08 14:39:14.241  INFO 10384 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-08 15:04:22.140  WARN 10384 --- [http-nio-80-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7a23fd06 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:04:22.142  WARN 10384 --- [http-nio-80-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@23473cff (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:04:22.142  WARN 10384 --- [http-nio-80-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@46692e5c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:04:22.143  WARN 10384 --- [http-nio-80-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@477b8db0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:04:22.144  WARN 10384 --- [http-nio-80-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@72732115 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:06:00.676  INFO 10384 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 15:06:00.678  INFO 10384 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-08 15:06:01.557  INFO 10384 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-08 15:06:07.279  INFO 18252 --- [main] c.b.rbposapi.RbposapiApplication         : Starting RbposapiApplication using Java 17.0.8 on AW0227 with PID 18252 (C:\Dev\rbposapi\target\classes started by comunicaciones in C:\Dev\rbposapi)
-2023-09-08 15:06:07.281  INFO 18252 --- [main] c.b.rbposapi.RbposapiApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-08 15:06:07.751  INFO 18252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-08 15:06:07.811  INFO 18252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 6 JPA repository interfaces.
-2023-09-08 15:06:08.149  INFO 18252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
-2023-09-08 15:06:08.156  INFO 18252 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-08 15:06:08.156  INFO 18252 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-09-08 15:06:08.244  INFO 18252 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-08 15:06:08.245  INFO 18252 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 934 ms
-2023-09-08 15:06:08.590  INFO 18252 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-08 15:06:10.766  INFO 18252 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-08 15:06:17.629  INFO 18252 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 15:06:17.938  WARN 18252 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-08 15:06:18.146  INFO 18252 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-09-08 15:06:18.174  INFO 18252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
-2023-09-08 15:06:18.184  INFO 18252 --- [main] c.b.rbposapi.RbposapiApplication         : Started RbposapiApplication in 11.154 seconds (JVM running for 11.406)
-2023-09-08 15:06:18.209  INFO 18252 --- [main] c.b.r.runner.DataPopulationRunner        : Starting faker runner...
-2023-09-08 15:06:18.209  INFO 18252 --- [main] c.b.r.runner.DataPopulationRunner        : Ended faker runner...
-2023-09-08 15:06:18.834  INFO 18252 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-08 15:06:18.835  INFO 18252 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-08 15:06:18.836  INFO 18252 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-08 15:14:37.725  WARN 18252 --- [http-nio-80-exec-10] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@22ca39f6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:14:37.727  WARN 18252 --- [http-nio-80-exec-10] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6aa80488 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2023-09-08 15:25:03.076  INFO 18252 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 15:25:03.078  INFO 18252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-08 15:25:03.224  INFO 18252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-08 15:25:08.575  INFO 19800 --- [main] c.b.rbposapi.RbposapiApplication         : Starting RbposapiApplication using Java 17.0.8 on AW0227 with PID 19800 (C:\Dev\rbposapi\target\classes started by comunicaciones in C:\Dev\rbposapi)
-2023-09-08 15:25:08.577  INFO 19800 --- [main] c.b.rbposapi.RbposapiApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-08 15:25:09.097  INFO 19800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-08 15:25:09.156  INFO 19800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 6 JPA repository interfaces.
-2023-09-08 15:25:09.494  INFO 19800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
-2023-09-08 15:25:09.501  INFO 19800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-08 15:25:09.502  INFO 19800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-09-08 15:25:09.610  INFO 19800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-08 15:25:09.610  INFO 19800 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1004 ms
-2023-09-08 15:25:09.960  INFO 19800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-08 15:25:12.674  INFO 19800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-08 15:25:19.950  INFO 19800 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 15:25:20.239  WARN 19800 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-08 15:25:20.494  INFO 19800 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-09-08 15:25:20.523  INFO 19800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
-2023-09-08 15:25:20.533  INFO 19800 --- [main] c.b.rbposapi.RbposapiApplication         : Started RbposapiApplication in 12.203 seconds (JVM running for 12.459)
-2023-09-08 15:25:20.556  INFO 19800 --- [main] c.b.r.runner.DataPopulationRunner        : Starting faker runner...
-2023-09-08 15:25:20.557  INFO 19800 --- [main] c.b.r.runner.DataPopulationRunner        : Ended faker runner...
-2023-09-08 15:26:17.474  INFO 19800 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-08 15:26:17.475  INFO 19800 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-08 15:26:17.476  INFO 19800 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-08 16:40:10.972  INFO 19800 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-08 16:40:10.974  INFO 19800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-08 16:40:11.273  INFO 19800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-13 11:46:36.565  INFO 15036 --- [main] c.b.rbposapi.RbposapiApplication         : Starting RbposapiApplication using Java 17.0.8 on AW0227 with PID 15036 (C:\Dev\rbposapi\target\classes started by comunicaciones in C:\Dev\rbposapi)
+2023-09-13 11:46:36.593  INFO 15036 --- [main] c.b.rbposapi.RbposapiApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-13 11:46:37.973  INFO 15036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-13 11:46:38.072  INFO 15036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 6 JPA repository interfaces.
+2023-09-13 11:46:39.332  INFO 15036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2023-09-13 11:46:39.380  INFO 15036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-13 11:46:39.381  INFO 15036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-09-13 11:46:39.560  INFO 15036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-13 11:46:39.560  INFO 15036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2916 ms
+2023-09-13 11:46:40.753  INFO 15036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-13 11:46:43.328  INFO 15036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-13 11:46:51.275  INFO 15036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-13 11:46:51.768  WARN 15036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-13 11:46:52.213  INFO 15036 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-09-13 11:46:52.329  INFO 15036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2023-09-13 11:46:52.340  INFO 15036 --- [main] c.b.rbposapi.RbposapiApplication         : Started RbposapiApplication in 16.992 seconds (JVM running for 17.696)
+2023-09-13 11:46:52.481  INFO 15036 --- [main] c.b.r.runner.DataPopulationRunner        : Starting faker runner...
+2023-09-13 11:46:52.482  INFO 15036 --- [main] c.b.r.runner.DataPopulationRunner        : Ended faker runner...
+2023-09-13 11:49:33.472  INFO 15036 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-13 11:49:33.473  INFO 15036 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-13 11:49:33.474  INFO 15036 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-13 11:55:31.857  INFO 15036 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-13 11:55:31.859  INFO 15036 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-13 11:55:32.616  INFO 15036 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

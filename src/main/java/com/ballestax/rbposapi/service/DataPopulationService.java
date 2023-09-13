@@ -1,6 +1,5 @@
 package com.ballestax.rbposapi.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ballestax.rbposapi.repository.CategoryRepository;
@@ -15,7 +14,6 @@ public class DataPopulationService {
     private IngredientRepository ingredientRepository;
     private FakeDataService fakeDataService;
 
-    @Autowired
     public DataPopulationService(ProductRepository productRepository, IngredientRepository ingredientRepository, CategoryRepository categoryRepository, FakeDataService fakeDataService) {
         this.productRepository = productRepository;
         this.categoryRepository = categoryRepository;

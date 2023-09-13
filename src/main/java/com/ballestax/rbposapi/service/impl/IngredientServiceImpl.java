@@ -2,11 +2,9 @@ package com.ballestax.rbposapi.service.impl;
 
 import com.ballestax.rbposapi.dto.IngredientDto;
 import com.ballestax.rbposapi.exception.ResourceNotFoundException;
-import com.ballestax.rbposapi.mapper.CategoryMapper;
 import com.ballestax.rbposapi.mapper.IngredientMapper;
 import com.ballestax.rbposapi.model.Ingredient;
 import com.ballestax.rbposapi.model.Product;
-import com.ballestax.rbposapi.repository.CategoryRepository;
 import com.ballestax.rbposapi.repository.IngredientRepository;
 import com.ballestax.rbposapi.repository.ProductRepository;
 import com.ballestax.rbposapi.service.IngredientService;

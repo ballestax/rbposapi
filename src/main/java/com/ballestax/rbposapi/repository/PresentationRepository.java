@@ -1,6 +1,5 @@
 package com.ballestax.rbposapi.repository;
 
-import com.ballestax.rbposapi.model.Additional;
 import com.ballestax.rbposapi.model.Presentation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
